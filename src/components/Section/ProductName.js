@@ -13,7 +13,7 @@ const ProductName = ({ prod }) => {
           <Card.Title>Name: {name}</Card.Title>
 
           <Button variant="primary">
-            <Link className="text-light u-none" to={`/move/${prod?.score}`}>Go Details</Link>
+            <Link className="text-light u-none" to={`/${prod?.score}`}>Go Details</Link>
           </Button>
         </Card.Body>
       </Card>

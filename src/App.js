@@ -4,6 +4,7 @@ import { Container } from "react-bootstrap";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Layout from "./components/Layout";
 import Product from "./components/Section/Product";
+import Details from "./components/Section/Details";
 
 const routers = createBrowserRouter([
   {
@@ -12,9 +13,13 @@ const routers = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Product />
+        element: <Product />,
       },
-      { path: "/move/:id", loader:({params})=>fetch() },
+      {
+        path: ":id",
+        element: <Details />,
+        loader: () => fetch("https://api.tvmaze.com/search/shows?q=all"),
+      },
     ],
   },
 ]);
